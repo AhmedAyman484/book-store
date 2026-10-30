@@ -1,0 +1,124 @@
+{
+    "authors": [
+    {
+      "id": "1",
+      "name": "Harper Lee",
+      "bio": "American novelist best known for To Kill a Mockingbird, a landmark novel of twentieth-century American literature.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL498120A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 2,
+      "followers": 12450,
+      "createdAt": "2026-09-22T19:35:00.000+03:00",
+      "updatedAt": "2026-09-22T19:55:00.000+03:00"
+    },
+    {
+      "id": "2",
+      "name": "Jane Austen",
+      "bio": "English novelist known for her sharp observations of society, relationships, and marriage in works such as Pride and Prejudice.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL21594A-M.jpg",
+      "nationality": "British",
+      "flag": "🇬🇧",
+      "books": 3,
+      "followers": 18920,
+      "createdAt": "2026-09-22T18:50:00.000+03:00",
+      "updatedAt": "2026-09-22T18:50:00.000+03:00"
+    },
+    {
+      "id": "3",
+      "name": "F. Scott Fitzgerald",
+      "bio": "American novelist and short-story writer associated with the Jazz Age and best known for The Great Gatsby.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL27349A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 2,
+      "followers": 15380,
+      "createdAt": "2026-09-22T17:40:00.000+03:00",
+      "updatedAt": "2026-09-22T17:40:00.000+03:00"
+    },
+    {
+      "id": "4",
+      "name": "J. D. Salinger",
+      "bio": "American author best known for The Catcher in the Rye and his stories about the Glass family.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL540486A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 2,
+      "followers": 11270,
+      "createdAt": "2026-09-22T16:25:00.000+03:00",
+      "updatedAt": "2026-09-22T16:25:00.000+03:00"
+    },
+    {
+      "id": "5",
+      "name": "Dan Brown",
+      "bio": "American thriller novelist known for mystery-driven stories involving codes, symbols, history, and secret societies.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL39307A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 4,
+      "followers": 28750,
+      "createdAt": "2026-09-22T15:10:00.000+03:00",
+      "updatedAt": "2026-09-22T15:10:00.000+03:00"
+    },
+    {
+      "id": "6",
+      "name": "Khaled Hosseini",
+      "bio": "Afghan-American novelist known for The Kite Runner and A Thousand Splendid Suns, stories centered on family, friendship, and Afghanistan.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL1412764A-M.jpg",
+      "nationality": "Afghan-American",
+      "flag": "🇦🇫",
+      "books": 3,
+      "followers": 21640,
+      "createdAt": "2026-09-20T20:00:00.000+03:00",
+      "updatedAt": "2026-09-20T20:00:00.000+03:00"
+    },
+    {
+      "id": "7",
+      "name": "Markus Zusak",
+      "bio": "Australian author best known for The Book Thief and The Messenger.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL1425869A-M.jpg",
+      "nationality": "Australian",
+      "flag": "🇦🇺",
+      "books": 2,
+      "followers": 9840,
+      "createdAt": "2026-09-20T19:25:00.000+03:00",
+      "updatedAt": "2026-09-20T19:25:00.000+03:00"
+    },
+    {
+      "id": "8",
+      "name": "Suzanne Collins",
+      "bio": "American author and television writer best known for The Hunger Games trilogy and The Underland Chronicles.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL1394359A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 4,
+      "followers": 32150,
+      "createdAt": "2026-09-20T18:50:00.000+03:00",
+      "updatedAt": "2026-09-20T21:05:00.000+03:00"
+    },
+    {
+      "id": "9",
+      "name": "Frank Herbert",
+      "bio": "American science-fiction author best known for the Dune series and its exploration of politics, ecology, and human development.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL79034A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 3,
+      "followers": 17680,
+      "createdAt": "2026-09-20T18:15:00.000+03:00",
+      "updatedAt": "2026-09-20T19:25:00.000+03:00"
+    },
+    {
+      "id": "10",
+      "name": "Stephen King",
+      "bio": "American novelist known for horror, suspense, supernatural fiction, and stories that explore fear and human nature.",
+      "avatarUrl": "https://covers.openlibrary.org/a/olid/OL19981A-M.jpg",
+      "nationality": "American",
+      "flag": "🇺🇸",
+      "books": 5,
+      "followers": 45800,
+      "createdAt": "2026-09-20T17:40:00.000+03:00",
+      "updatedAt": "2026-09-20T17:40:00.000+03:00"
+    }
+  ]
+}

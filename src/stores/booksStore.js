@@ -15,17 +15,17 @@ export const useBooksStore = defineStore("books", {
       this.error = null;
 
       try {
-        const response = await api.get("/books");
+        const response = await api.get("/books.json");
 
-        this.books = response.data;
+        this.books = Array.isArray(response.data)
+          ? response.data
+          : response.data.books || [];
         this.lastFetchedAt = new Date().toISOString();
 
         return this.books;
       } catch (error) {
         console.error(error);
-
         this.error = "Failed to load books.";
-
         throw error;
       } finally {
         this.loading = false;
@@ -34,58 +34,35 @@ export const useBooksStore = defineStore("books", {
 
     async fetchById(id) {
       try {
-        return (await api.get(`/books/${id}`)).data;
+        if (!this.books.length) {
+          await this.fetchList();
+        }
+
+        const book = this.books.find(
+          (item) => String(item.id) === String(id)
+        );
+
+        if (!book) {
+          throw new Error("Book not found");
+        }
+
+        return book;
       } catch (error) {
         this.error = "Failed to load book.";
-
         throw error;
       }
     },
 
-    async create(book) {
-      const now = new Date().toISOString();
-      const payload = {
-        ...book,
-        createdAt: now,
-        updatedAt: now,
-      };
-
-      const response = await api.post("/books", payload);
-
-      this.books.push(response.data);
-
-      return response.data;
+    async create() {
+      throw new Error("Adding books is disabled in demo mode.");
     },
 
-    async update(id, book) {
-      const current = this.books.find(
-        (item) => String(item.id) === String(id)
-      );
-      const payload = {
-        ...book,
-        createdAt: current?.createdAt || new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      const response = await api.put(`/books/${id}`, payload);
-
-      const index = this.books.findIndex(
-        (item) => String(item.id) === String(id)
-      );
-
-      if (index !== -1) {
-        this.books[index] = response.data;
-      }
-
-      return response.data;
+    async update() {
+      throw new Error("Editing books is disabled in demo mode.");
     },
 
-    async remove(id) {
-      await api.delete(`/books/${id}`);
-
-      this.books = this.books.filter(
-        (item) => String(item.id) !== String(id)
-      );
+    async remove() {
+      throw new Error("Deleting books is disabled in demo mode.");
     },
 
     async fetchBooks() {

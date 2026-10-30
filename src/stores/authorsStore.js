@@ -1,3 +1,4 @@
+
 import { defineStore } from "pinia";
 import { api } from "../services/api";
 
@@ -15,16 +16,18 @@ export const useAuthorsStore = defineStore("authors", {
       this.error = null;
 
       try {
-        const response = await api.get("/authors");
+        const response = await api.get("/authors.json");
 
-        this.authors = response.data;
+        this.authors = Array.isArray(response.data)
+          ? response.data
+          : response.data.authors || [];
+
         this.lastFetchedAt = new Date().toISOString();
 
         return this.authors;
       } catch (error) {
         console.error(error);
         this.error = "Failed to load authors.";
-
         throw error;
       } finally {
         this.loading = false;
@@ -33,58 +36,35 @@ export const useAuthorsStore = defineStore("authors", {
 
     async fetchById(id) {
       try {
-        return (await api.get(`/authors/${id}`)).data;
+        if (!this.authors.length) {
+          await this.fetchList();
+        }
+
+        const author = this.authors.find(
+          (item) => String(item.id) === String(id)
+        );
+
+        if (!author) {
+          throw new Error("Author not found");
+        }
+
+        return author;
       } catch (error) {
         this.error = "Failed to load author.";
-
         throw error;
       }
     },
 
-    async create(author) {
-      const now = new Date().toISOString();
-      const payload = {
-        ...author,
-        createdAt: now,
-        updatedAt: now,
-      };
-
-      const response = await api.post("/authors", payload);
-
-      this.authors.push(response.data);
-
-      return response.data;
+    async create() {
+      throw new Error("Adding authors is disabled in demo mode.");
     },
 
-    async update(id, author) {
-      const current = this.authors.find(
-        (item) => String(item.id) === String(id)
-      );
-      const payload = {
-        ...author,
-        createdAt: current?.createdAt || new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-
-      const response = await api.put(`/authors/${id}`, payload);
-
-      const index = this.authors.findIndex(
-        (item) => String(item.id) === String(id)
-      );
-
-      if (index !== -1) {
-        this.authors[index] = response.data;
-      }
-
-      return response.data;
+    async update() {
+      throw new Error("Editing authors is disabled in demo mode.");
     },
 
-    async remove(id) {
-      await api.delete(`/authors/${id}`);
-
-      this.authors = this.authors.filter(
-        (item) => String(item.id) !== String(id)
-      );
+    async remove() {
+      throw new Error("Deleting authors is disabled in demo mode.");
     },
 
     async addAuthor(author) {
